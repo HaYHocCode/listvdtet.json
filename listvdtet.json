@@ -1,16 +1,1 @@
-import requests
 
-url = "https://tiktok-random-video-generator.p.rapidapi.com/?minDuration=30&maxDuration=120"
-
-headers = {
-    "x-rapidapi-host": "tiktok-random-video-generator.p.rapidapi.com",
-    "x-rapidapi-key": "52c88c31b8msh8c1ea3a202fa13cp11dc4cjsn17dde6f9318e"
-}
-
-try:
-    response = requests.get(url, headers=headers)
-    response.raise_for_status()  # Gây lỗi nếu HTTP code != 200
-    data = response.json()
-    print(data)
-except requests.exceptions.RequestException as e:
-    print("Đã xảy ra lỗi khi gọi API:", e)
